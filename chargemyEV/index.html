@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>chargemyEV — Tell us what EV charging is really like</title>
+  <meta name="description" content="Help shape chargemyEV, a reliability-first EV charging experience for India. Tell us what happens when a charger is broken, occupied, or unreliable." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#07100d;--card:#0d1a16;--card2:#10231d;--text:#eef8f3;--muted:#a9bbb4;--line:#21352e;--green:#66f28f;--green2:#b8ffca;--danger:#ff8e8e;--max:1080px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 85% 5%,#143a29 0,transparent 30%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.55}.wrap{max-width:var(--max);margin:auto;padding:0 22px}
+    h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.08;margin:0 0 16px} h1{font-size:clamp(42px,7vw,76px);letter-spacing:-3px} h2{font-size:clamp(30px,4vw,48px);letter-spacing:-1.5px} h3{font-size:21px} p{color:var(--muted)}
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between}.logo{font-family:'Space Grotesk';font-size:23px;font-weight:700}.logo span{color:var(--green)}.navcta{border:1px solid var(--line);padding:9px 14px;border-radius:999px;color:var(--text);text-decoration:none;font-size:14px}
+    .hero{padding:80px 0 70px}.eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--green2);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green)}.hero p{max-width:690px;font-size:19px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:12px;padding:14px 20px;font-weight:700;text-decoration:none;cursor:pointer;font-size:15px}.primary{background:var(--green);color:#06100a}.secondary{background:#11231d;color:var(--text);border:1px solid var(--line)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:50px}.stat{padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(13,26,22,.7)}.stat b{font-size:26px;font-family:'Space Grotesk'}.stat small{display:block;color:var(--muted);margin-top:4px}
+    section{padding:72px 0}.sectionhead{max-width:720px;margin-bottom:30px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:24px}.num{color:var(--green);font-family:'Space Grotesk';font-size:13px;font-weight:700;letter-spacing:1px}.card p{margin-bottom:0}
+    .survey{background:#0a1512;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.formbox{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}.progress{height:6px;background:#172923;border-radius:9px;overflow:hidden;margin-bottom:28px}.progress span{display:block;height:100%;background:var(--green);width:25%;transition:.25s}.step{display:none}.step.active{display:block}.question{margin:0 0 25px}.question label.title{display:block;font-weight:700;margin-bottom:11px}.req{color:var(--green)}.options{display:grid;gap:9px}.options.two{grid-template-columns:repeat(2,1fr)}.opt{position:relative}.opt input{position:absolute;opacity:0}.opt label{display:block;border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--muted);cursor:pointer}.opt input:checked+label{border-color:var(--green);background:#112b20;color:var(--text)}input[type=text],input[type=email],input[type=number],select,textarea{width:100%;background:#091510;border:1px solid var(--line);color:var(--text);border-radius:11px;padding:12px 13px;font:inherit;outline:none}textarea{min-height:110px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--green)}.navbuttons{display:flex;justify-content:space-between;margin-top:25px}.error{color:var(--danger);font-size:13px;margin-top:8px;display:none}.success{display:none;text-align:center;padding:40px 10px}.success .check{font-size:52px}.tiny{font-size:12px;color:#83958e;margin-top:14px}.consent{font-size:12px;color:#83958e}.consent input{width:auto}
+    .quote{border-left:3px solid var(--green);padding:4px 0 4px 18px;color:#d7e9e1;font-size:18px}.footer{padding:40px 0 60px;color:#7e9089;font-size:13px;border-top:1px solid var(--line)}
+    @media(max-width:750px){.stats,.grid{grid-template-columns:1fr}.hero{padding-top:50px}.options.two{grid-template-columns:1fr}.formbox{padding:19px}.navcta{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav><div class="logo">charge<span>myEV</span></div><a class="navcta" href="#survey">Share your experience</a></nav>
+    <header class="hero">
+      <div class="eyebrow"><span class="dot"></span> India EV charging research</div>
+      <h1>What if you knew a charger would actually work?</h1>
+      <p>Finding an EV charger is getting easier. <strong>The harder question is whether it will be working when you arrive.</strong> We are researching a reliability-first charging experience for Indian EV drivers — and we want your real experience before we build it.</p>
+      <div class="actions"><a class="btn primary" href="#survey">Take the 3-minute survey</a><a class="btn secondary" href="#problem">See what we are solving</a></div>
+      <div class="stats"><div class="stat"><b>Broken?</b><small>Tell us what happened when a charger failed.</small></div><div class="stat"><b>Occupied?</b><small>Tell us how you handle uncertainty on trips.</small></div><div class="stat"><b>Unreliable?</b><small>Tell us what information you wish you had.</small></div></div>
+    </header>
+  </div>
+
+  <section id="problem"><div class="wrap"><div class="sectionhead"><div class="eyebrow">01 · The pain point</div><h2>The problem isn't just finding a charger.</h2><p>EV drivers can face a frustrating chain of uncertainty: the charger may be offline, occupied, incompatible, payment may fail, or the displayed status may simply be stale.</p></div><div class="grid"><div class="card"><div class="num">01 / ARRIVE</div><h3>You reach the station.</h3><p>The app said it was available. Reality may be different.</p></div><div class="card"><div class="num">02 / DISCOVER</div><h3>Something doesn't work.</h3><p>Broken connector, payment issue, network failure, queue, or inaccurate status.</p></div><div class="card"><div class="num">03 / RECOVER</div><h3>You need a backup.</h3><p>You search again, spend time and battery, and hope the next charger is reliable.</p></div></div><div style="margin-top:28px" class="quote">chargemyEV is exploring a simple question: <strong>“What is the probability that this charger will successfully charge me?”</strong></div></div></section>
+
+  <section><div class="wrap"><div class="sectionhead"><div class="eyebrow">02 · Is this urgent?</div><h2>We don't want to assume. You tell us.</h2><p>This page is deliberately a validation experiment. Your answers will help determine whether charger reliability is a real enough problem to build around.</p></div><div class="grid"><div class="card"><h3>Real experience</h3><p>Tell us about the last time charging did not go as expected.</p></div><div class="card"><h3>Current solutions</h3><p>Tell us which apps you use and what they fail to tell you.</p></div><div class="card"><h3>Ideal solution</h3><p>Tell us what would make you trust a charging recommendation.</p></div></div></div></section>
+
+  <section class="survey" id="survey"><div class="wrap"><div class="sectionhead"><div class="eyebrow">03 · Your experience</div><h2>Help us decide what to build.</h2><p>About 3 minutes. Please answer from your actual EV charging experience. Your response is used for product research.</p></div>
+    <div class="formbox">
+      <div class="progress"><span id="bar"></span></div>
+      <form id="surveyForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdRqIQnMdDVBorDJXoyPkGN9GAK0lHBgrfltdNa4gCuywoUcQ/formResponse" method="POST" target="hidden_iframe">
+        <div class="step active" data-step="1">
+          <div class="question"><label class="title">1. Do you currently own or regularly drive an EV? <span class="req">*</span></label><div class="options"><div class="opt"><input required type="radio" name="ev_driver" value="Yes, I own one" id="ev1"><label for="ev1">Yes, I own one</label></div><div class="opt"><input type="radio" name="ev_driver" value="I regularly drive someone else's EV" id="ev2"><label for="ev2">I regularly drive someone else's EV</label></div><div class="opt"><input type="radio" name="ev_driver" value="No, but I am planning to buy an EV" id="ev3"><label for="ev3">No, but I am planning to buy an EV</label></div></div></div>
+          <div class="question"><label class="title">2. Which EV type do you use/plan to use?</label><div class="options two"><div class="opt"><input type="radio" name="entry.799595190" value="Car" id="t1"><label for="t1">🚗 Car</label></div><div class="opt"><input type="radio" name="entry.799595190" value="2-wheeler" id="t2"><label for="t2">🛵 2-wheeler</label></div><div class="opt"><input type="radio" name="entry.799595190" value="Commercial/Fleet" id="t3"><label for="t3">🚚 Commercial/Fleet</label></div><div class="opt"><input type="radio" name="entry.799595190" value="Other" id="t4"><label for="t4">Other</label></div></div></div>
+          <div class="question"><label class="title">3. City where you usually charge <span class="req">*</span></label><input required type="text" name="entry.553991405" placeholder="e.g. Bhopal"></div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="question"><label class="title">4. How often do you use public charging?</label><div class="options"><div class="opt"><input type="radio" name="public_frequency" value="Several times a week" id="f1"><label for="f1">Several times a week</label></div><div class="opt"><input type="radio" name="public_frequency" value="About once a week" id="f2"><label for="f2">About once a week</label></div><div class="opt"><input type="radio" name="public_frequency" value="A few times a month" id="f3"><label for="f3">A few times a month</label></div><div class="opt"><input type="radio" name="public_frequency" value="Rarely" id="f4"><label for="f4">Rarely</label></div></div></div>
+          <div class="question"><label class="title">5. Have you ever reached a charger that was broken, offline, occupied, or otherwise unusable? <span class="req">*</span></label><div class="options"><div class="opt"><input required type="radio" name="entry.712572872" value="Yes, multiple times" id="c1"><label for="c1">Yes, multiple times</label></div><div class="opt"><input type="radio" name="entry.712572872" value="Yes, once or twice" id="c2"><label for="c2">Yes, once or twice</label></div><div class="opt"><input type="radio" name="entry.712572872" value="No" id="c3"><label for="c3">No</label></div><div class="opt"><input type="radio" name="entry.712572872" value="Not sure" id="c4"><label for="c4">Not sure</label></div></div></div>
+          <div class="question"><label class="title">6. What went wrong? Select all that apply.</label><div class="options two"><div class="opt"><input type="checkbox" name="failure_reason" value="Charger offline/broken" id="r1"><label for="r1">Offline / broken</label></div><div class="opt"><input type="checkbox" name="failure_reason" value="Already occupied/queue" id="r2"><label for="r2">Occupied / queue</label></div><div class="opt"><input type="checkbox" name="failure_reason" value="Payment/app failure" id="r3"><label for="r3">Payment / app</label></div><div class="opt"><input type="checkbox" name="failure_reason" value="Connector problem" id="r4"><label for="r4">Connector</label></div><div class="opt"><input type="checkbox" name="failure_reason" value="Wrong/stale availability" id="r5"><label for="r5">Wrong status</label></div><div class="opt"><input type="checkbox" name="failure_reason" value="Other" id="r6"><label for="r6">Other</label></div></div></div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="question"><label class="title">7. Which apps/services do you currently use to find chargers? Select all.</label><div class="options two"><div class="opt"><input type="checkbox" name="apps" value="Google Maps" id="a1"><label for="a1">Google Maps</label></div><div class="opt"><input type="checkbox" name="apps" value="PlugShare" id="a2"><label for="a2">PlugShare</label></div><div class="opt"><input type="checkbox" name="apps" value="Tata Power" id="a3"><label for="a3">Tata Power</label></div><div class="opt"><input type="checkbox" name="apps" value="Statiq" id="a4"><label for="a4">Statiq</label></div><div class="opt"><input type="checkbox" name="apps" value="ChargePoint/other CPO app" id="a5"><label for="a5">CPO apps</label></div><div class="opt"><input type="checkbox" name="apps" value="Other" id="a6"><label for="a6">Other</label></div></div></div>
+          <div class="question"><label class="title">8. What is the biggest weakness of the apps you use today?</label><textarea name="current_app_problem" placeholder="Example: status is not accurate, I don't know if the charger actually works, duplicate listings, queue information is missing..." required></textarea></div>
+          <div class="question"><label class="title">9. How important would a reliable-charger score be before a trip? <span class="req">*</span></label><div class="options"><div class="opt"><input required type="radio" name="entry.809916791" value="1 - Not important" id="i1"><label for="i1">1 — Not important</label></div><div class="opt"><input type="radio" name="entry.809916791" value="2" id="i2"><label for="i2">2</label></div><div class="opt"><input type="radio" name="entry.809916791" value="3" id="i3"><label for="i3">3 — Useful</label></div><div class="opt"><input type="radio" name="entry.809916791" value="4" id="i4"><label for="i4">4</label></div><div class="opt"><input type="radio" name="entry.809916791" value="5 - Extremely important" id="i5"><label for="i5">5 — Extremely important</label></div></div></div>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="question"><label class="title">10. Which features would make you use chargemyEV? Select all.</label><div class="options two"><div class="opt"><input type="checkbox" name="entry.1098991185" value="Reliability score" id="d1"><label for="d1">Reliability score</label></div><div class="opt"><input type="checkbox" name="entry.1098991185" value="Live working status" id="d2"><label for="d2">Live working status</label></div><div class="opt"><input type="checkbox" name="entry.1098991185" value="Historical uptime" id="d3"><label for="d3">Historical uptime</label></div><div class="opt"><input type="checkbox" name="entry.1098991185" value="Predictive route" id="d4"><label for="d4">Predictive route</label></div><div class="opt"><input type="checkbox" name="entry.1098991185" value="Backup charger planning" id="d5"><label for="d5">Backup charger</label></div><div class="opt"><input type="checkbox" name="entry.1098991185" value="User reports/photos" id="d6"><label for="d6">User reports</label></div><div class="opt"><input type="checkbox" name="entry.1098991185" value="Alerts when charger goes down" id="d7"><label for="d7">Downtime alerts</label></div><div class="opt"><input type="checkbox" name="entry.1098991185" value="Other" id="d8"><label for="d8">Something else</label></div></div></div>
+          <div class="question"><label class="title">11. If chargemyEV could solve ONE charging problem for you, what should it solve?</label><textarea name="one_problem" placeholder="Your answer"></textarea></div>
+          <div class="question">
+            <label class="title">12. What should chargemyEV improve, add, or do differently from the EV apps you already use?</label>
+            <p class="hint">Select everything you would genuinely want. Then add your own suggestion below.</p>
+            <div class="options two suggestion-options">
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="More accurate live charger status" id="s1"><label for="s1">More accurate live charger status</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Show charger reliability score" id="s2"><label for="s2">Charger reliability score</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Show last verified working time" id="s3"><label for="s3">Last verified working time</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Real-time occupancy/queue" id="s4"><label for="s4">Real-time occupancy / queue</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Better route planning with backup chargers" id="s5"><label for="s5">Better route + backup chargers</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Transparent pricing" id="s6"><label for="s6">Clear & transparent pricing</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Payment reliability" id="s7"><label for="s7">More reliable payments</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Better filters for connector/power/vehicle" id="s8"><label for="s8">Better filters for my vehicle</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="User reviews and photo proof" id="s9"><label for="s9">Reviews + photo proof</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Alerts when a charger goes down" id="s10"><label for="s10">Charger down alerts</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Easy reporting of broken chargers" id="s11"><label for="s11">Easy broken-charger reporting</label></div>
+              <div class="opt"><input type="checkbox" name="app_suggestion_option" value="Better customer support" id="s12"><label for="s12">Better customer support</label></div>
+            </div>
+            <textarea name="entry.1612234170" placeholder="Anything else? Tell us what you love, hate, or wish existed in current EV apps."></textarea>
+          </div>
+          <div class="question"><label class="title">13. Would you use a free chargemyEV app if it gave you a confidence score before charging?</label><div class="options"><div class="opt"><input type="radio" name="free_intent" value="Definitely" id="u1"><label for="u1">Definitely</label></div><div class="opt"><input type="radio" name="free_intent" value="Probably" id="u2"><label for="u2">Probably</label></div><div class="opt"><input type="radio" name="free_intent" value="Maybe" id="u3"><label for="u3">Maybe</label></div><div class="opt"><input type="radio" name="free_intent" value="No" id="u4"><label for="u4">No</label></div></div></div>
+          <div class="question"><label class="title">14. If it saved you from failed charging stops, what would you consider reasonable for premium features?</label><div class="options two"><div class="opt"><input type="radio" name="willingness" value="Free only" id="w1"><label for="w1">Free only</label></div><div class="opt"><input type="radio" name="willingness" value="Up to ₹49/month" id="w2"><label for="w2">Up to ₹49/mo</label></div><div class="opt"><input type="radio" name="willingness" value="₹50–₹99/month" id="w3"><label for="w3">₹50–₹99/mo</label></div><div class="opt"><input type="radio" name="willingness" value="₹100–₹199/month" id="w4"><label for="w4">₹100–₹199/mo</label></div></div></div>
+          <div class="question"><label class="title">15. Optional: email/phone if you'd like to join the beta or receive the research summary.</label><input type="text" name="entry.1052489187" placeholder="Email or WhatsApp number"></div>
+          <label class="consent"><input type="checkbox" name="research_consent" value="Yes"> I'm happy for chargemyEV to contact me about beta testing or research follow-up.</label>
+        </div>
+
+        <div class="error" id="error">Please complete the required questions before continuing.</div>
+        <div class="navbuttons"><button class="btn secondary" type="button" id="back" style="visibility:hidden">Back</button><button class="btn primary" type="button" id="next">Next</button></div>
+      </form><iframe name="googleFormFrame" id="googleFormFrame" style="display:none;"></iframe>
+      <div class="success" id="success"><div class="check">✓</div><h2>Thank you.</h2><p>Your experience has been added to the chargemyEV validation study. We are using real driver feedback to decide what should be built.</p><a class="btn secondary" href="#problem">Read the problem again</a></div>
+      <p class="tiny">No payment is collected here. This is a product-validation survey.</p>
+    </div>
+  </div></section>
+
+  <section><div class="wrap"><div class="sectionhead"><div class="eyebrow">04 · What happens next</div><h2>We build only if the problem is real.</h2><p>Survey responses will be grouped to identify the most common charging failures, the apps drivers already trust, missing information, and the features people actually want.</p></div></div></section>
+  <footer class="footer"><div class="wrap">© 2026 chargemyEV · Independent EV charging reliability research</div></footer>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none"></iframe>
+  <script>
+    // 1) Create a Google Form with questions matching the fields below.
+    // 2) In Google Forms: Send → Link / or inspect the form HTML for the formResponse URL.
+    // 3) Replace YOUR_GOOGLE_FORM_ACTION_URL with: https://docs.google.com/forms/d/e/FORM_ID/formResponse
+    // 4) For a production launch, replace each name="..." with the corresponding Google Forms entry.<entry-id> field.
+    // The UI intentionally separates the survey from the Google Form so you can keep this landing page branded.
+
+    const steps=[...document.querySelectorAll('.step')]; let current=0;
+    const bar=document.getElementById('bar'), next=document.getElementById('next'), back=document.getElementById('back'), error=document.getElementById('error');
+    function showStep(){steps.forEach((s,i)=>s.classList.toggle('active',i===current));bar.style.width=((current+1)/steps.length*100)+'%';back.style.visibility=current?'visible':'hidden';next.textContent=current===steps.length-1?'Submit survey':'Next';window.scrollTo({top:document.getElementById('survey').offsetTop-20,behavior:'smooth'});}
+    function validate(){const active=steps[current]; let ok=true; active.querySelectorAll('[required]').forEach(el=>{if(el.type==='radio'){const group=active.querySelectorAll('input[name="'+el.name+'"]'); if(![...group].some(x=>x.checked)) ok=false;} else if(!el.value.trim()) ok=false;}); error.style.display=ok?'none':'block'; return ok;}
+    next.addEventListener('click',()=>{if(!validate())return;if(current<steps.length-1){current++;showStep()}else{const form=document.getElementById('surveyForm'); if(form.action.includes('YOUR_GOOGLE_FORM_ACTION_URL')){error.textContent='Connect your Google Form first: replace YOUR_GOOGLE_FORM_ACTION_URL and map the Google entry IDs in the form HTML.';error.style.display='block';return;} form.submit(); form.style.display='none';document.querySelector('.navbuttons').style.display='none';document.querySelector('.tiny').style.display='none';document.getElementById('success').style.display='block';}});
+    back.addEventListener('click',()=>{if(current>0){current--;error.style.display='none';showStep()}});
+    showStep();
+  </script>
+
+<script>
+(function () {
+  const form = document.querySelector('form');
+  if (!form) return;
+  form.target = 'googleFormFrame';
+  form.method = 'POST';
+  form.action = 'https://docs.google.com/forms/d/e/1FAIpQLSdRqIQnMdDVBorDJXoyPkGN9GAK0lHBgrfltdNa4gCuywoUcQ/formResponse';
+
+  form.addEventListener('submit', function () {
+    setTimeout(function () {
+      const msg = document.querySelector('[data-success-message]');
+      if (msg) msg.style.display = 'block';
+    }, 1200);
+  });
+})();
+</script>
+
+</body>
+</html>
